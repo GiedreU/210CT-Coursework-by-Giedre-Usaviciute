@@ -1,0 +1,9 @@
+REVERSE_STRING (s, a)
+    IF TYPE(s) = str
+	s <- s.SPLIT()
+    IF LENGTH (s) = 0
+	RETURN a
+    ELSE
+        APPEND s[LENGTH(s)-1] to a // a <- a + s[LENGTH(s)-1].toString() + " "
+	REMOVE s[LENGTH(s)-1] from s
+	RETURN REVERSE(s, a)

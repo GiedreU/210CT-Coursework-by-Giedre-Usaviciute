@@ -1,0 +1,14 @@
+PERFECT_SQARE(n) // function takes a positive integer and returns highest perfect square
+	found <- False
+	k <- 1
+        WHILE NOT found
+		square <- k*k
+		IF square < n
+			k <- k+1
+			CONTINUE
+		IF square > n
+			RETURN ((k-1)^2)
+			found <- True
+		ELSE IF square = n
+			RETURN(square)
+			found <- True

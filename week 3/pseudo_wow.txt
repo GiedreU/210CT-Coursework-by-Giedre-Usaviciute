@@ -1,0 +1,7 @@
+REMOVE_VOCALS(s)
+	IF s IS EMPTY:
+		RETURN s
+	ELSE IF s[0] NOT IN ['a','e','i','u','o','A','E','I','U','O']
+		RETURN s[0]+REMOVE_VOCALS[s[1:]]
+	ELSE:
+		RETURN REMOVE_VOCALS[s[1:]]

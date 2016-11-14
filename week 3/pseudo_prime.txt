@@ -1,0 +1,11 @@
+PRIME (n, k)
+   IF n < 2
+      RETURN False
+   ELSE IF n = 2 or (k = 2 and n%k ? 0)
+      RETURN True
+   ELSE IF n%k ? 0
+      RETURN PRIME(n, k-1)
+   ELSE
+      RETURN FALSE
+
+number = PRIME(n, n-1)

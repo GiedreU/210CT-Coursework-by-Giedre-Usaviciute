@@ -1,0 +1,12 @@
+BINARY_SEARCH(aList, low, high)
+	IF aList.lenght = 0
+		RETURN False
+	mid <- aList.lenght // 2
+	IF aList[mid] >= low and aList[mid]<=high
+		RETURN True
+	ELSE IF aList[mid] < low
+		RETURN BINARY_SEARCH(aList[(mid+1):], low, high)
+	ELSE IF aList[mid] > high
+		RETURN BINARY_SEARCH(aList[:(mid-1)], low, high)
+
+BigO notation would be O log(n), beacause it is a devide and conquer recursive function

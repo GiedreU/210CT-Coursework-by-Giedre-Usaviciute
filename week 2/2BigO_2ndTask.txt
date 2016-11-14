@@ -1,0 +1,29 @@
+from random import randint
+
+def shuffleList(alist):
+
+    shuffledList = [0]*len(alist)                                        (1)
+    usedList=[]                                                          (1)   
+    for i in alist:                                     
+        place = getRandomNumber(0,len(alist),alist.index(i),usedList)    (n)
+        shuffledList[place]=i                                            (n)
+    return shuffledList                                                  (1)
+
+def getRandomNumber(m,n,i,usedList):
+    '''returns unused random number which will be used as place
+    number to store variable from one list to another'''
+    num = randint(m,n-1)                                                 (1)
+    if i == 0:
+        usedList.append(num)                                             (n)
+        return num                                                       (n)
+    else:
+        if num in usedList:
+            return getRandomNumber(m,n,i,usedList)                       (n)
+        else:
+            usedList.append(num)                                         (n)
+            return num                                                   (n)
+
+
+Big O for this program would be O(n) because there is a for loop in shuffleList function and a linear search
+in getRandomNumber function but there is none nested loops. Moreover, getRandomNumber function would be called recursively
+only n times in worst case scenario because 
