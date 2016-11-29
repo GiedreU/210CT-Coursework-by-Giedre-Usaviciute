@@ -1,4 +1,5 @@
-def reMove(s):
+def remove(s):
+    '''removes all vowels from a str recursively'''
     if s == '':
         return s
     elif s[0] not in ['a','e','i','u','o','A','E','I','U','O']:
@@ -6,6 +7,6 @@ def reMove(s):
     else:
         return reMove(s[1:])
 
-s = 'oooooo'
-a = reMove(s)
+s = 'beautiful'
+a = remove(s)
 print(a)
