@@ -1,8 +1,9 @@
 from random import randint
 
 def shuffleList(alist):
-
-    shuffledList = [0]*len(alist)
+    '''for each item in given list randomly generates new index to which it will be stored in a new list. usedList is a list which is
+    used to store already used index, to prevent repetition and overwriting '''
+    shuffledList = [0]*len(alist)#new empty list to which all items are trasfered from the given list
     usedList=[]
     for i in alist:
         place = getRandomNumber(0,len(alist),alist.index(i),usedList)
