@@ -4,6 +4,6 @@ REVERSE_STRING (s, a)
     IF LENGTH (s) = 0
 	RETURN a
     ELSE
-        APPEND s[LENGTH(s)-1] to a // a <- a + s[LENGTH(s)-1].toString() + " "
+        APPEND s[LENGTH(s)-1]+ " " to a
 	REMOVE s[LENGTH(s)-1] from s
 	RETURN REVERSE(s, a)
