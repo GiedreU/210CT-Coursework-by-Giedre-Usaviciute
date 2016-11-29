@@ -1,8 +1,10 @@
 def createMatrix(n,k):
+    '''creates a matrix of size n which all values are equal to k'''
     matrix = [[k for x in range(n)]for y in range(n)]        #(n^2)
     return matrix                                            #(1)
 
 def matrixAddition(matrix1, matrix2, n):
+    '''adds two given matrices'''
     addMatrix = createMatrix(n,0)                            #(n^2, because BigO notation for create matrix function is O(n^2) )
     for i in range(n):
         for j in range(n):
@@ -10,6 +12,7 @@ def matrixAddition(matrix1, matrix2, n):
     return addMatrix                                         #(1)
 
 def matrixSub(matrix1, matrix2, n):
+    '''substracts one given matrix from another given matrix'''
     matrixSub = createMatrix(n,0)                            #(n^2, because BigO notation for create matrix function is O(n^2) )
     for i in range(n):
         for j in range(n):
@@ -17,6 +20,7 @@ def matrixSub(matrix1, matrix2, n):
     return matrixSub
 
 def matrixMulti(matrix1, matrix2, n):
+    '''multiples two given matrices of size n '''
     matrixMulti = createMatrix(n,0)                          #(n^2, because BigO notation for create matrix function is O(n^2) )
     for i in range(n):
         for j in range(n):
@@ -27,6 +31,7 @@ def matrixMulti(matrix1, matrix2, n):
     return matrixMulti                                       #(1)
 
 def scalarMultiplication(num, matrix,n):
+    '''multiples matrix by number'''
     for i in range(n):
         for j in range(n):
             matrix[i][j] = matrix[i][j]*num                  #(n^2)
@@ -42,4 +47,4 @@ print(matrixA)
 matrixAddition is O(n^2), because of for loop and nested for loop;
 matrixSub is O(n^2),  because of for loop and nested for loop;
 matrixMulti is O(n^3),  because of for loop and nested for loop and nested loop in nested loop;
-scolarMultiplication is O(n^2),  because of for loop and nested for loop;.
+scolarMultiplication is O(n^2),  because of for loop and nested for loop;'''
