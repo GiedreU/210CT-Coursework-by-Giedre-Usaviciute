@@ -8,11 +8,12 @@ def perfect( n ):
             k+=1
             continue
         elif square > n:#if square is bigger, return previous square value
+            found = True
             return((k-1)**2)
-            found = True
         elif square==n:
-            return (square)#if its is equal, return square
             found = True
+            return (square)#if its is equal, return square
+
         
 perfSquare = perfect(37)
             
