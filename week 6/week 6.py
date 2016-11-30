@@ -33,7 +33,6 @@ def postorder(tree):
 
 def in_order(tree):
     stack = []
-    q = True
     
     while len(stack)!= 0 or tree != None:
         if tree != None:
