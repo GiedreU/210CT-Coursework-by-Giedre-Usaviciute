@@ -1,4 +1,3 @@
-
 class BinTreeNode(object):
 
     def __init__(self, value):
@@ -33,28 +32,20 @@ def postorder(tree):
   
 
 def in_order(tree):
-
-    aList = []
-    empty = False
-    while (not empty):
+    stack = []
+    q = True
+    
+    while len(stack)!= 0 or tree != None:
         if tree != None:
-            aList.append(tree)
+            stack.append(tree)
             tree = tree.left
-        else:
-            if len(aList) > 0 :
-                tree = aList.pop()
-                print (tree.value)
-
-                tree = tree.right
-            else:
-                empty = True
-    
-    
-    #if(tree.left!=None):
-    #    in_order(tree.left)
-    #print (tree.value)
-    #if(tree.right!=None):
-    #    in_order(tree.right)
+            
+        elif tree == None and stack!=[]:
+            item = stack.pop()
+            print(item.value)
+            tree = item.right
+        
+  
 
 if __name__ == '__main__':
     
