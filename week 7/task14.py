@@ -1,4 +1,5 @@
 from queue import *
+import os
 
 class E(object):
     def __init__(self, label, edges = []):
@@ -42,6 +43,17 @@ def breadthFirstSearch(G,v):
             for e in u.edges:
                 Q.put(e)
     return visited
+def saveToFile(item1, item2, filename):
+    file = open(filename, "w")
+    strItem1 = ''
+    strItem2 = ''
+    for i in item1:
+        strItem1 = strItem1 + str(i)+ ' '
+    for j in item2:
+        strItem2 = strItem2 + str(j)+ ' '
+    file.write("BFS: "+ strItem1+ '\n')
+    file.write("DFS: "+ strItem2)
+    file.close()
 
 node1 = E(1,None)
 node2 = E(2,None)
@@ -73,8 +85,9 @@ graph.edge(node5,node9)
 graph.edge(node9,node8)
 graph.edge(node2,node1)
 
-dep =depthFirstSearch(graph, node1)
+dep = depthFirstSearch(graph, node1)
 bre = breadthFirstSearch(graph, node1)
+saveToFile(bre, dep, "graphSearch.txt")
 for i in dep:
     print(i.label)
 for i in bre:
