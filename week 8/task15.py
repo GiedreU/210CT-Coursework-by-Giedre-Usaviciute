@@ -42,7 +42,7 @@ def dijkstra(graph,s,d):
                 v = i[0]
                 mini = i[0].tw
 
-    return visited
+    
                 
                 
 graph = G()
@@ -68,7 +68,7 @@ graph.edge(node6,node5,6)
 graph.edge(node6,node4,7)
 graph.edge(node5,node4,3)
  
-visited = dijkstra(graph, node1, node4)
+dijkstra(graph, node1, node4)
 node = node4
 while node.pre!=None:
     print(node.pre.label)
